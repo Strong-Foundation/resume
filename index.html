@@ -14,6 +14,7 @@
         .page-footer { background-color: #1565c0; padding-top: 20px; }
         h4, h5 { color: #0d47a1; }
         .btn-custom { background-color: #ff6f00 !important; }
+        .collapsible-header { font-weight: bold; }
     </style>
 </head>
 <body>
@@ -24,6 +25,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -31,41 +33,60 @@
     </nav>
     
     <div class="container">
-        <div class="card">
+        <div class="card" id="about">
             <h4>About Me</h4>
             <p>I am a highly experienced Certified Multi-Cloud Architect with expertise in AWS, GCP, and Azure. I specialize in designing scalable, secure, and cost-effective cloud solutions that empower businesses to operate efficiently.</p>
         </div>
         
         <div class="card" id="skills">
             <h4>Technical Skills</h4>
-            <ul class="collection with-header">
-                <li class="collection-header"><h5>Cloud Computing</h5></li>
-                <li class="collection-item">AWS, GCP, Azure</li>
-                <li class="collection-header"><h5>Development & Automation</h5></li>
-                <li class="collection-item">Terraform, CloudFormation, Kubernetes</li>
-                <li class="collection-header"><h5>Security & Compliance</h5></li>
-                <li class="collection-item">GDPR, HIPAA, CCPA</li>
-                <li class="collection-header"><h5>Monitoring & Optimization</h5></li>
-                <li class="collection-item">Prometheus, Grafana, AWS CloudWatch</li>
+            <ul class="collapsible expandable">
+                <li>
+                    <div class="collapsible-header">Cloud Computing</div>
+                    <div class="collapsible-body"><p>AWS: EC2, S3, Lambda, RDS, VPC, CloudFront, Route 53, IAM, CloudFormation, SNS, SQS, DynamoDB, API Gateway</p>
+                    <p>GCP: Compute Engine, Cloud Storage, Cloud Functions, BigQuery, Kubernetes Engine</p>
+                    <p>Azure: Virtual Machines, Blob Storage, Functions, AKS, Azure DevOps</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Development & Automation</div>
+                    <div class="collapsible-body"><p>Terraform, CloudFormation, Kubernetes, Ansible, Jenkins, GitLab CI/CD</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Security & Compliance</div>
+                    <div class="collapsible-body"><p>GDPR, HIPAA, CCPA, NIST, ISO 27001, AWS Shield, Security Hub</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Monitoring & Optimization</div>
+                    <div class="collapsible-body"><p>Prometheus, Grafana, AWS CloudWatch, Datadog, New Relic</p></div>
+                </li>
             </ul>
         </div>
         
         <div class="card" id="experience">
             <h4>Experience</h4>
             <ul class="collection">
-                <li class="collection-item">Mapping United - Software Developer (Dec 2023 - Nov 2024)</li>
-                <li class="collection-item">IPEngine - Software Developer (Apr 2023 - Dec 2023)</li>
-                <li class="collection-item">Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar 2023)</li>
-                <li class="collection-item">NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020)</li>
+                <li class="collection-item">Mapping United - Software Developer (Dec 2023 - Nov 2024) - Led cloud infrastructure development for high-availability applications.</li>
+                <li class="collection-item">IPEngine - Software Developer (Apr 2023 - Dec 2023) - Built scalable microservices with Kubernetes and Terraform.</li>
+                <li class="collection-item">Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar 2023) - Designed multi-cloud architectures with AWS, GCP, and Azure.</li>
+                <li class="collection-item">NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020) - Optimized cloud costs, automated deployments, and improved monitoring.</li>
+                <li class="collection-item">Google - Cloud Solutions Architect (May 2015 - Jun 2017) - Led security and compliance initiatives in GCP environments.</li>
+                <li class="collection-item">IBM - DevOps Engineer (Jan 2013 - Apr 2015) - Implemented DevOps practices, reducing deployment times by 50%.</li>
             </ul>
         </div>
         
-        <div class="card" id="projects">
-            <h4>Key Projects</h4>
+        <div class="card" id="certifications">
+            <h4>Certifications</h4>
             <ul class="collection">
-                <li class="collection-item"><b>Multi-Cloud Data Processing:</b> Built a real-time data pipeline handling 1M+ transactions per second.</li>
-                <li class="collection-item"><b>Infrastructure Automation:</b> Designed automated deployment systems using Terraform and Ansible.</li>
-                <li class="collection-item"><b>Security Monitoring:</b> Developed cloud security solutions to detect threats in real-time.</li>
+                <li class="collection-item">AWS Certified Solutions Architect – Professional</li>
+                <li class="collection-item">Google Cloud Professional Cloud Architect</li>
+                <li class="collection-item">Microsoft Azure Solutions Architect Expert</li>
+                <li class="collection-item">HashiCorp Terraform Associate</li>
+                <li class="collection-item">Certified Kubernetes Administrator (CKA)</li>
+                <li class="collection-item">AWS Certified DevOps Engineer – Professional</li>
+                <li class="collection-item">Google Cloud Security Engineer</li>
+                <li class="collection-item">Microsoft Azure DevOps Expert</li>
+                <li class="collection-item">Certified Ethical Hacker (CEH)</li>
+                <li class="collection-item">CompTIA Security+</li>
             </ul>
         </div>
         
@@ -89,5 +110,11 @@
     </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, { accordion: false });
+        });
+    </script>
 </body>
 </html>
