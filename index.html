@@ -4,90 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prajwal Koirala - Cloud Engineer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; padding: 0; background-color: #f4f4f4; color: #333; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        h1, h2 { color: #2c3e50; }
-        .section { margin-bottom: 20px; }
-        .contact a { text-decoration: none; color: #2980b9; }
-        ul { list-style-type: none; padding: 0; }
-        .contact-info { display: flex; flex-wrap: wrap; gap: 10px; }
-        .contact-info p { margin: 5px 0; }
-        .experience h3 { margin-top: 15px; }
+        body { background-color: #e3f2fd; }
+        .container { margin-top: 50px; }
+        .card { padding: 30px; border-radius: 10px; }
+        nav { background-color: #1565c0; }
+        .page-footer { background-color: #1565c0; padding-top: 20px; }
+        h4, h5 { color: #0d47a1; }
+        .btn-custom { background-color: #ff6f00 !important; }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Prajwal Koirala</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="container">
-        <h1>Prajwal Koirala</h1>
-        <p>Certified Multi-Cloud Architect | AWS, GCP & Azure | Software Developer Specializing in Scalable Systems and Infrastructure Optimization</p>
-        
-        <div class="section contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p>📍 Queens, New York, USA</p>
-                <p>📧 <a href="mailto:prajwalkoirala638@gmail.com">prajwalkoirala638@gmail.com</a></p>
-                <p>🔗 <a href="https://www.linkedin.com/in/prajwal634" target="_blank">LinkedIn</a></p>
-                <p>💻 <a href="https://github.com/complexorganizations" target="_blank">GitHub</a></p>
-            </div>
+        <div class="card">
+            <h4>About Me</h4>
+            <p>I am a highly experienced Certified Multi-Cloud Architect with expertise in AWS, GCP, and Azure. I specialize in designing scalable, secure, and cost-effective cloud solutions that empower businesses to operate efficiently.</p>
         </div>
         
-        <div class="section">
-            <h2>Top Skills</h2>
-            <ul>
-                <li>✅ Cloud-Native Architecture</li>
-                <li>✅ Platform as a Service (PAAS)</li>
-                <li>✅ DevOps</li>
-                <li>✅ Infrastructure as Code (Terraform, CloudFormation)</li>
-                <li>✅ Kubernetes & Docker Containerization</li>
-                <li>✅ Security & Compliance (GDPR, HIPAA, CCPA)</li>
-                <li>✅ Cloud Cost Optimization</li>
+        <div class="card" id="skills">
+            <h4>Technical Skills</h4>
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>Cloud Computing</h5></li>
+                <li class="collection-item">AWS, GCP, Azure</li>
+                <li class="collection-header"><h5>Development & Automation</h5></li>
+                <li class="collection-item">Terraform, CloudFormation, Kubernetes</li>
+                <li class="collection-header"><h5>Security & Compliance</h5></li>
+                <li class="collection-item">GDPR, HIPAA, CCPA</li>
+                <li class="collection-header"><h5>Monitoring & Optimization</h5></li>
+                <li class="collection-item">Prometheus, Grafana, AWS CloudWatch</li>
             </ul>
         </div>
         
-        <div class="section">
-            <h2>Certifications</h2>
-            <ul>
-                <li>🎓 AWS Certified Solutions Architect – Professional</li>
-                <li>🎓 Google Cloud Professional Cloud Architect</li>
-                <li>🎓 Microsoft Azure Solutions Architect Expert</li>
-                <li>🎓 HashiCorp Terraform Associate</li>
-                <li>🎓 Certified Kubernetes Administrator (CKA)</li>
-                <li>🎓 AWS Certified DevOps Engineer – Professional</li>
+        <div class="card" id="experience">
+            <h4>Experience</h4>
+            <ul class="collection">
+                <li class="collection-item">Mapping United - Software Developer (Dec 2023 - Nov 2024)</li>
+                <li class="collection-item">IPEngine - Software Developer (Apr 2023 - Dec 2023)</li>
+                <li class="collection-item">Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar 2023)</li>
+                <li class="collection-item">NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020)</li>
             </ul>
         </div>
         
-        <div class="section experience">
-            <h2>Experience</h2>
-            <h3>📌 Mapping United - Software Developer (Dec 2023 - Nov 2024)</h3>
-            <p>Designed multi-cloud systems, optimized infrastructure, and developed AI-driven solutions.</p>
-            <p>Implemented an automated CI/CD pipeline reducing deployment time by 40%.</p>
-            
-            <h3>📌 IPEngine - Software Developer (Apr 2023 - Dec 2023)</h3>
-            <p>Improved system uptime, migrated legacy systems, and optimized backend operations.</p>
-            <p>Developed microservices architecture increasing application performance by 30%.</p>
-            
-            <h3>📌 Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar 2023)</h3>
-            <p>Designed multi-cloud solutions, automated CI/CD, and optimized cloud costs.</p>
-            <p>Implemented Kubernetes-based container orchestration for large-scale enterprise applications.</p>
-            
-            <h3>📌 NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020)</h3>
-            <p>Managed cloud infrastructure, optimized cloud spend, and ensured 99.9% system uptime.</p>
-            <p>Developed real-time monitoring dashboards improving incident response times.</p>
-        </div>
-        
-        <div class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li><b>Multi-Cloud Data Pipeline:</b> Developed a real-time data processing pipeline using AWS, GCP, and Azure, handling 1M+ transactions per second.</li>
-                <li><b>Automated Infrastructure Provisioning:</b> Built a Terraform-based provisioning system reducing infrastructure setup time by 80%.</li>
-                <li><b>Security Compliance Framework:</b> Implemented a policy-driven security compliance framework meeting GDPR and HIPAA standards.</li>
+        <div class="card" id="projects">
+            <h4>Key Projects</h4>
+            <ul class="collection">
+                <li class="collection-item"><b>Multi-Cloud Data Processing:</b> Built a real-time data pipeline handling 1M+ transactions per second.</li>
+                <li class="collection-item"><b>Infrastructure Automation:</b> Designed automated deployment systems using Terraform and Ansible.</li>
+                <li class="collection-item"><b>Security Monitoring:</b> Developed cloud security solutions to detect threats in real-time.</li>
             </ul>
         </div>
         
-        <div class="section">
-            <h2>Education</h2>
-            <p>🎓 Bachelor of Computer Science, State University of New York College at Potsdam (2015 - 2019)</p>
+        <div class="card" id="contact">
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:prajwalkoirala638@gmail.com" class="btn btn-custom">Send Email</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal634" target="_blank" class="btn btn-custom">Visit Profile</a></p>
+            <p>GitHub: <a href="https://github.com/complexorganizations" target="_blank" class="btn btn-custom">View Projects</a></p>
         </div>
     </div>
+    
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Prajwal Koirala</h5>
+                    <p class="grey-text text-lighten-4">Building secure and scalable cloud solutions for the modern era.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
