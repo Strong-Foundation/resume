@@ -1,120 +1,734 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prajwal Koirala - Cloud Engineer</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #e3f2fd; }
-        .container { margin-top: 50px; }
-        .card { padding: 30px; border-radius: 10px; }
-        nav { background-color: #1565c0; }
-        .page-footer { background-color: #1565c0; padding-top: 20px; }
-        h4, h5 { color: #0d47a1; }
-        .btn-custom { background-color: #ff6f00 !important; }
-        .collapsible-header { font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prajwal Koirala - Cloud Engineer</title>
+  <!-- Material Icons & Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --background-color: #121212;
+      --card-background-color: #1e1e1e;
+      --text-color: #ffffff;
+      --nav-background-color: #212121;
+      --footer-background-color: #212121;
+      --btn-background-color: #03DAC5;
+      --transition-speed: 0.3s;
+    }
+
+    /* Global Styles & Dark Mode */
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a {
+      color: var(--btn-background-color);
+      transition: color var(--transition-speed);
+    }
+
+    a:hover {
+      color: #80fff9;
+    }
+
+    /* Header (Hero) */
+    header {
+      background: url('https://via.placeholder.com/1600x500?text=Hero+Banner') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 5px;
+      transition: opacity var(--transition-speed);
+      max-width: 80%;
+    }
+
+    .hero-content:hover {
+      opacity: 0.9;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #BB86FC;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    .hero-buttons {
+      margin-top: 15px;
+    }
+
+    .hero-buttons .btn {
+      margin: 5px;
+    }
+
+    /* Navigation Styles */
+    nav,
+    .nav-wrapper,
+    .sidenav {
+      background-color: var(--nav-background-color);
+    }
+
+    .sidenav-trigger.btn-floating {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    /* Container & Card */
+    .container {
+      margin-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 10px;
+      background-color: var(--card-background-color);
+      margin-bottom: 40px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transition: transform var(--transition-speed);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .section-image {
+      margin-bottom: 20px;
+    }
+
+    .section-image img {
+      width: 100%;
+      border-radius: 5px;
+      transition: opacity var(--transition-speed);
+    }
+
+    .section-image img:hover {
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    .page-footer {
+      background-color: var(--footer-background-color);
+      padding-top: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+    }
+
+    /* For print simulation of pages (page-breaks) */
+    @media print {
+      section {
+        page-break-after: always;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">Prajwal Koirala</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+  <!-- Navigation Drawer (Sidenav) -->
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="https://via.placeholder.com/300x200?text=Background" alt="Navigation Background" loading="lazy">
         </div>
-    </nav>
-    
-    <div class="container">
-        <div class="card" id="about">
-            <h4>About Me</h4>
-            <p>I am a highly experienced Certified Multi-Cloud Architect with expertise in AWS, GCP, and Azure. I specialize in designing scalable, secure, and cost-effective cloud solutions that empower businesses to operate efficiently.</p>
-        </div>
-        
-        <div class="card" id="skills">
-            <h4>Technical Skills</h4>
-            <ul class="collapsible expandable">
-                <li>
-                    <div class="collapsible-header">Cloud Computing</div>
-                    <div class="collapsible-body"><p>AWS: EC2, S3, Lambda, RDS, VPC, CloudFront, Route 53, IAM, CloudFormation, SNS, SQS, DynamoDB, API Gateway</p>
-                    <p>GCP: Compute Engine, Cloud Storage, Cloud Functions, BigQuery, Kubernetes Engine</p>
-                    <p>Azure: Virtual Machines, Blob Storage, Functions, AKS, Azure DevOps</p></div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Development & Automation</div>
-                    <div class="collapsible-body"><p>Terraform, CloudFormation, Kubernetes, Ansible, Jenkins, GitLab CI/CD</p></div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Security & Compliance</div>
-                    <div class="collapsible-body"><p>GDPR, HIPAA, CCPA, NIST, ISO 27001, AWS Shield, Security Hub</p></div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Monitoring & Optimization</div>
-                    <div class="collapsible-body"><p>Prometheus, Grafana, AWS CloudWatch, Datadog, New Relic</p></div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="card" id="experience">
-            <h4>Experience</h4>
-            <ul class="collection">
-                <li class="collection-item">Mapping United - Software Developer (Dec 2023 - Nov 2024) - Led cloud infrastructure development for high-availability applications.</li>
-                <li class="collection-item">IPEngine - Software Developer (Apr 2023 - Dec 2023) - Built scalable microservices with Kubernetes and Terraform.</li>
-                <li class="collection-item">Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar 2023) - Designed multi-cloud architectures with AWS, GCP, and Azure.</li>
-                <li class="collection-item">NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020) - Optimized cloud costs, automated deployments, and improved monitoring.</li>
-                <li class="collection-item">Google - Cloud Solutions Architect (May 2015 - Jun 2017) - Led security and compliance initiatives in GCP environments.</li>
-                <li class="collection-item">IBM - DevOps Engineer (Jan 2013 - Apr 2015) - Implemented DevOps practices, reducing deployment times by 50%.</li>
-            </ul>
-        </div>
-        
-        <div class="card" id="certifications">
-            <h4>Certifications</h4>
-            <ul class="collection">
-                <li class="collection-item">AWS Certified Solutions Architect – Professional</li>
-                <li class="collection-item">Google Cloud Professional Cloud Architect</li>
-                <li class="collection-item">Microsoft Azure Solutions Architect Expert</li>
-                <li class="collection-item">HashiCorp Terraform Associate</li>
-                <li class="collection-item">Certified Kubernetes Administrator (CKA)</li>
-                <li class="collection-item">AWS Certified DevOps Engineer – Professional</li>
-                <li class="collection-item">Google Cloud Security Engineer</li>
-                <li class="collection-item">Microsoft Azure DevOps Expert</li>
-                <li class="collection-item">Certified Ethical Hacker (CEH)</li>
-                <li class="collection-item">CompTIA Security+</li>
-            </ul>
-        </div>
-        
-        <div class="card" id="contact">
-            <h4>Contact</h4>
-            <p>Email: <a href="mailto:prajwalkoirala638@gmail.com" class="btn btn-custom">Send Email</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal634" target="_blank" class="btn btn-custom">Visit Profile</a></p>
-            <p>GitHub: <a href="https://github.com/complexorganizations" target="_blank" class="btn btn-custom">View Projects</a></p>
-        </div>
+        <a href="#user"><img class="circle" src="https://via.placeholder.com/100?text=Profile" alt="Profile Picture"
+            loading="lazy"></a>
+        <a href="#name"><span class="white-text name">Prajwal Koirala</span></a>
+        <a href="#email"><span class="white-text email">prajwalkoirala638@gmail.com</span></a>
+      </div>
+    </li>
+    <li><a href="#about"><i class="material-icons">person</i>About</a></li>
+    <li><a href="#skills"><i class="material-icons">build</i>Skills</a></li>
+    <li><a href="#experience"><i class="material-icons">work</i>Experience</a></li>
+    <li><a href="#certifications"><i class="material-icons">school</i>Certifications</a></li>
+    <li><a href="#projects"><i class="material-icons">folder</i>Projects</a></li>
+    <li><a href="#awards"><i class="material-icons">emoji_events</i>Awards</a></li>
+    <li><a href="#testimonials"><i class="material-icons">feedback</i>Testimonials</a></li>
+    <li><a href="#volunteer"><i class="material-icons">volunteer_activism</i>Volunteer</a></li>
+    <li><a href="#additional"><i class="material-icons">info</i>Additional</a></li>
+    <li><a href="#publications"><i class="material-icons">library_books</i>Publications</a></li>
+    <li><a href="#courses"><i class="material-icons">import_contacts</i>Courses</a></li>
+    <li><a href="#blog"><i class="material-icons">rss_feed</i>Blog</a></li>
+    <li><a href="#interviews"><i class="material-icons">record_voice_over</i>Interviews</a></li>
+    <li><a href="#community"><i class="material-icons">group</i>Community</a></li>
+    <li><a href="#training"><i class="material-icons">school</i>Workshops</a></li>
+    <li><a href="#hobbies"><i class="material-icons">favorite</i>Hobbies</a></li>
+    <li><a href="#references"><i class="material-icons">assignment_ind</i>References</a></li>
+    <li><a href="#goals"><i class="material-icons">trending_up</i>Future Goals</a></li>
+    <li><a href="#social"><i class="material-icons">share</i>Social</a></li>
+    <li><a href="#contact"><i class="material-icons">email</i>Contact</a></li>
+  </ul>
+  <!-- Sidenav Trigger Button -->
+  <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating"><i class="material-icons">menu</i></a>
+
+  <!-- Header / Hero Section -->
+  <header role="banner">
+    <div class="hero-content" aria-label="Hero Banner">
+      <h1>Prajwal Koirala</h1>
+      <p>Cloud Engineer | Multi-Cloud Architect | DevOps & Automation Specialist</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-custom">Get in Touch</a>
+        <a href="tel:+1234567890" class="btn btn-custom" aria-label="Call Phone Number">Call: +1 (234) 567-890</a>
+      </div>
     </div>
-    
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Prajwal Koirala</h5>
-                    <p class="grey-text text-lighten-4">Building secure and scalable cloud solutions for the modern era.</p>
-                </div>
-            </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- About Section -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=About+Me" alt="About Me" loading="lazy">
         </div>
-    </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.collapsible');
-            var instances = M.Collapsible.init(elems, { accordion: false });
-        });
-    </script>
+        <h4 id="about-heading">About Me</h4>
+        <p>I am a highly experienced Certified Multi-Cloud Architect with expertise in AWS, GCP, and Azure. I specialize
+          in designing scalable, secure, and cost-effective cloud solutions that empower businesses to operate
+          efficiently.</p>
+        <div class="section-content">
+          <p>With over a decade in the industry, I have led transformative projects across finance, healthcare, and
+            e-commerce. My passion for innovation drives me to continuously explore state-of-the-art cloud technologies.
+          </p>
+          <p>I mentor, speak at conferences, and contribute to open-source projects. My dedication to continuous
+            learning helps me stay ahead of industry trends.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+            dapibus diam.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Technical+Skills" alt="Technical Skills" loading="lazy">
+        </div>
+        <h4 id="skills-heading">Technical Skills</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">Cloud Computing</div>
+            <div class="collapsible-body">
+              <p><strong>AWS:</strong> EC2, S3, Lambda, RDS, VPC, CloudFront, Route 53, IAM, CloudFormation, SNS, SQS,
+                DynamoDB, API Gateway, AWS Shield, Security Hub</p>
+              <p><strong>GCP:</strong> Compute Engine, Cloud Storage, Cloud Functions, BigQuery, Kubernetes Engine,
+                Pub/Sub</p>
+              <p><strong>Azure:</strong> Virtual Machines, Blob Storage, Functions, AKS, Azure DevOps, Active Directory,
+                Cosmos DB</p>
+              <p>Expert in cloud cost optimization, performance tuning, and proactive monitoring.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Development & Automation</div>
+            <div class="collapsible-body">
+              <p>Tools: Terraform, CloudFormation, Kubernetes, Ansible, Jenkins, GitLab CI/CD, Docker, CI/CD pipelines,
+                automated testing frameworks.</p>
+              <p>Proficient in building and deploying continuous integration and delivery workflows.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Security & Compliance</div>
+            <div class="collapsible-body">
+              <p>Frameworks: GDPR, HIPAA, CCPA, NIST, ISO 27001, CEH, CompTIA Security+, AWS Shield, Security Hub.</p>
+              <p>Skilled in implementing robust security measures and ensuring regulatory compliance.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Monitoring & Optimization</div>
+            <div class="collapsible-body">
+              <p>Tools: Prometheus, Grafana, AWS CloudWatch, Datadog, New Relic, Splunk.</p>
+              <p>Focused on optimizing performance through proactive monitoring and cost analysis.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="section-content">
+          <p>These technical skills empower me to architect and maintain resilient cloud infrastructures while driving
+            continuous improvement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Experience" alt="Experience" loading="lazy">
+        </div>
+        <h4 id="experience-heading">Experience</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">Mapping United - Software Developer (Dec 2023 - Nov 2024)</div>
+            <div class="collapsible-body">
+              <p>Led development of cloud infrastructure for high-availability applications with a focus on scalability
+                and cost optimization.</p>
+              <p>Implemented microservices architectures using Kubernetes and automated CI/CD pipelines.</p>
+              <p>Collaborated with cross-functional teams to integrate AI-driven analytics and automation tools.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna at odio ullamcorper fermentum.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">IPEngine - Software Developer (Apr 2023 - Dec 2023)</div>
+            <div class="collapsible-body">
+              <p>Built scalable microservices with Kubernetes and Terraform, improving system performance by 30%.</p>
+              <p>Optimized deployment pipelines and enhanced system reliability with continuous integration.</p>
+              <p>Additional info: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Cloud Native Computing Foundation - Lead Cloud Engineer (Nov 2020 - Mar
+              2023)</div>
+            <div class="collapsible-body">
+              <p>Designed multi-cloud architectures leveraging AWS, GCP, and Azure.</p>
+              <p>Implemented security best practices and cost management strategies while mentoring a team of engineers.
+              </p>
+              <p>Further details: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">NVIDIA - Cloud Operations Specialist (Jul 2017 - Sep 2020)</div>
+            <div class="collapsible-body">
+              <p>Optimized cloud expenditures through automation and efficient resource management.</p>
+              <p>Developed monitoring dashboards that improved incident response times by 30%.</p>
+              <p>Enhanced system reliability using robust DevOps practices.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Google - Cloud Solutions Architect (May 2015 - Jun 2017)</div>
+            <div class="collapsible-body">
+              <p>Led security and compliance initiatives in GCP environments while designing scalable architectures to
+                support global operations.</p>
+              <p>Worked closely with enterprise clients to tailor cloud solutions to their business needs.</p>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">IBM - DevOps Engineer (Jan 2013 - Apr 2015)</div>
+            <div class="collapsible-body">
+              <p>Implemented DevOps practices that reduced deployment times by 50%.</p>
+              <p>Automated testing, deployment, and monitoring processes, transitioning legacy systems to modern,
+                cloud-based solutions.</p>
+              <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" aria-labelledby="certifications-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Certifications" alt="Certifications" loading="lazy">
+        </div>
+        <h4 id="certifications-heading">Certifications</h4>
+        <ul class="collection">
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/aws-sa-pro" target="_blank">AWS
+              Certified Solutions Architect – Professional</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/gcp-cca" target="_blank">Google
+              Cloud Professional Cloud Architect</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/azure-sae"
+              target="_blank">Microsoft Azure Solutions Architect Expert</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/terraform"
+              target="_blank">HashiCorp Terraform Associate</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/cka" target="_blank">Certified
+              Kubernetes Administrator (CKA)</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/aws-devops" target="_blank">AWS
+              Certified DevOps Engineer – Professional</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/gcp-security"
+              target="_blank">Google Cloud Security Engineer</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/azure-devops"
+              target="_blank">Microsoft Azure DevOps Expert</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/ceh" target="_blank">Certified
+              Ethical Hacker (CEH)</a></li>
+          <li class="collection-item"><a href="https://www.your-cert-verification.com/comptia-security"
+              target="_blank">CompTIA Security+</a></li>
+        </ul>
+        <div class="section-content">
+          <p>Each certification reflects extensive training and hands-on experience, ensuring advanced cloud solutions
+            and top-notch security.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Projects" alt="Projects" loading="lazy">
+        </div>
+        <h4 id="projects-heading">Projects</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">Multi-Cloud Data Processing</div>
+            <div class="collapsible-body">
+              <p>Developed a real-time data pipeline processing over 1M transactions per second across AWS, GCP, and
+                Azure.</p>
+              <p>Utilized serverless architectures and container orchestration for high availability and scalability.
+              </p>
+              <a class="btn btn-custom" href="https://github.com/complexorganizations/multi-cloud-data-pipeline"
+                target="_blank">View on GitHub</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Infrastructure Automation</div>
+            <div class="collapsible-body">
+              <p>Designed an automated deployment system using Terraform and Ansible, reducing setup times by 80%.</p>
+              <p>Ensured consistent configurations across multiple environments.</p>
+              <a class="btn btn-custom" href="https://github.com/complexorganizations/infrastructure-automation"
+                target="_blank">View on GitHub</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Security Monitoring Platform</div>
+            <div class="collapsible-body">
+              <p>Implemented a cloud security monitoring solution integrating AWS GuardDuty, Azure Sentinel, and Google
+                Chronicle.</p>
+              <p>Provided real-time threat detection and automated response mechanisms to secure cloud infrastructures.
+              </p>
+              <a class="btn btn-custom" href="https://github.com/complexorganizations/security-monitoring-platform"
+                target="_blank">View on GitHub</a>
+            </div>
+          </li>
+        </ul>
+        <div class="section-content">
+          <p>These projects demonstrate my ability to innovate and implement state-of-the-art cloud solutions that drive
+            business success.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Recognitions Section -->
+    <section id="awards" aria-labelledby="awards-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Awards+%26+Recognitions" alt="Awards & Recognitions"
+            loading="lazy">
+        </div>
+        <h4 id="awards-heading">Awards & Recognitions</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">Innovator of the Year - Cloud Excellence Awards 2023</div>
+            <div class="collapsible-body">
+              <p>Awarded for groundbreaking work in designing multi-cloud architectures that significantly improved
+                operational efficiency.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Top Cloud Engineer - Tech Leaders Summit 2022</div>
+            <div class="collapsible-body">
+              <p>Recognized for outstanding contributions to cloud security and automation.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Best DevOps Implementation - Global IT Awards 2021</div>
+            <div class="collapsible-body">
+              <p>Awarded for implementing a state-of-the-art DevOps pipeline that reduced deployment times by 50%.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Testimonials" alt="Testimonials" loading="lazy">
+        </div>
+        <h4 id="testimonials-heading">Testimonials</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">CTO, Major Financial Institution</div>
+            <div class="collapsible-body">
+              <p>"Prajwal's innovative approach and deep technical expertise transformed our cloud infrastructure. His
+                leadership was crucial to our success."</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">VP, Global E-commerce Company</div>
+            <div class="collapsible-body">
+              <p>"The scalable solutions implemented by Prajwal significantly improved our system performance and
+                reliability. His strategic vision is unparalleled."</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Volunteer Work Section -->
+    <section id="volunteer" aria-labelledby="volunteer-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Volunteer+Work" alt="Volunteer Work" loading="lazy">
+        </div>
+        <h4 id="volunteer-heading">Volunteer Work</h4>
+        <ul class="collapsible expandable">
+          <li>
+            <div class="collapsible-header">Tech Mentor at Code for Good</div>
+            <div class="collapsible-body">
+              <p>Mentored aspiring engineers in cloud technologies and DevOps practices. Led workshops to empower future
+                tech leaders.</p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Volunteer, Local Community Tech Hub</div>
+            <div class="collapsible-body">
+              <p>Assisted in establishing community tech centers, providing hands-on training and support for local
+                residents and small businesses.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Additional Information Section -->
+    <section id="additional" aria-labelledby="additional-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Additional+Information" alt="Additional Information"
+            loading="lazy">
+        </div>
+        <h4 id="additional-heading">Additional Information</h4>
+        <p>I actively engage in professional development by attending conferences, participating in hackathons, and
+          contributing to open-source projects. I maintain a blog where I share insights on cloud architecture, best
+          practices, and emerging trends.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          Cras venenatis euismod malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+          cubilia Curae; Duis consequat, odio non imperdiet vehicula, nisi arcu dictum eros, a porta lectus neque a dui.
+          Mauris convallis, mauris sit amet facilisis placerat, neque risus scelerisque arcu, a elementum metus dolor a
+          urna.</p>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" aria-labelledby="publications-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Publications" alt="Publications" loading="lazy">
+        </div>
+        <h4 id="publications-heading">Publications</h4>
+        <p>I have published several articles and research papers on cloud architecture and DevOps best practices. My
+          work has been featured in prominent tech journals and online platforms.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nunc vitae dapibus fringilla, ante
+          nunc sollicitudin nunc, eget dignissim turpis enim sed erat. Integer vitae nibh sapien.</p>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" aria-labelledby="courses-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Courses" alt="Courses" loading="lazy">
+        </div>
+        <h4 id="courses-heading">Courses & Training</h4>
+        <p>I have completed numerous courses in cloud computing, DevOps, and cybersecurity from leading institutions and
+          online platforms. These courses have honed my technical expertise and strategic approach.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, lorem at pretium sagittis, nulla lorem
+          condimentum velit, nec molestie ligula erat vitae dui.</p>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" aria-labelledby="blog-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Blog" alt="Blog" loading="lazy">
+        </div>
+        <h4 id="blog-heading">Blog</h4>
+        <p>Read my latest articles on cloud innovations, industry insights, and best practices in DevOps and automation.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet urna nec arcu fermentum hendrerit.
+          Integer imperdiet massa ac risus tempus, eget convallis libero tincidunt.</p>
+      </div>
+    </section>
+
+    <!-- Interviews Section -->
+    <section id="interviews" aria-labelledby="interviews-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Interviews" alt="Interviews" loading="lazy">
+        </div>
+        <h4 id="interviews-heading">Interviews</h4>
+        <p>I have been interviewed by leading tech media outlets and podcasts about my expertise in cloud computing and
+          DevOps strategies.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi. Fusce nec dui
+          vitae elit pharetra condimentum.</p>
+      </div>
+    </section>
+
+    <!-- Community Engagement Section -->
+    <section id="community" aria-labelledby="community-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Community" alt="Community Engagement" loading="lazy">
+        </div>
+        <h4 id="community-heading">Community Engagement</h4>
+        <p>I actively contribute to online communities, speak at meetups, and help organize tech events. I believe in
+          sharing knowledge and empowering others.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies magna et massa convallis, at
+          interdum odio mollis.</p>
+      </div>
+    </section>
+
+    <!-- Training & Workshops Section -->
+    <section id="training" aria-labelledby="training-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Workshops" alt="Training & Workshops" loading="lazy">
+        </div>
+        <h4 id="training-heading">Training & Workshops</h4>
+        <p>I regularly conduct workshops and training sessions on cloud computing, DevOps, and cybersecurity to help
+          professionals and students advance their skills.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel mauris quam. Etiam tincidunt odio eu est
+          congue, ut malesuada purus porta.</p>
+      </div>
+    </section>
+
+    <!-- Hobbies & Interests Section -->
+    <section id="hobbies" aria-labelledby="hobbies-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Hobbies" alt="Hobbies & Interests" loading="lazy">
+        </div>
+        <h4 id="hobbies-heading">Hobbies & Interests</h4>
+        <p>Outside of work, I enjoy exploring new technologies, reading, and outdoor activities. These hobbies help me
+          maintain a balanced and creative lifestyle.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" aria-labelledby="references-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=References" alt="References" loading="lazy">
+        </div>
+        <h4 id="references-heading">References</h4>
+        <p>Professional references are available upon request. I have a proven track record of delivering high-quality,
+          innovative cloud solutions.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl
+          consectetur et.</p>
+      </div>
+    </section>
+
+    <!-- Future Goals Section -->
+    <section id="goals" aria-labelledby="goals-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Future+Goals" alt="Future Goals" loading="lazy">
+        </div>
+        <h4 id="goals-heading">Future Goals</h4>
+        <p>I aim to continue evolving as a cloud architect and to lead innovative projects that shape the future of
+          technology. My goals include expanding my expertise, contributing to groundbreaking projects, and mentoring
+          the next generation of tech professionals.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.</p>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" aria-labelledby="social-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Social+Media" alt="Social Media" loading="lazy">
+        </div>
+        <h4 id="social-heading">Social Media</h4>
+        <p>Connect with me on social media:</p>
+        <div>
+          <a href="https://www.linkedin.com/in/prajwal634" target="_blank" class="btn btn-custom"
+            aria-label="LinkedIn"><i class="material-icons">linkedin</i> LinkedIn</a>
+          <a href="https://github.com/complexorganizations" target="_blank" class="btn btn-custom"
+            aria-label="GitHub"><i class="material-icons">code</i> GitHub</a>
+          <a href="https://twitter.com/yourtwitterhandle" target="_blank" class="btn btn-custom" aria-label="Twitter"><i
+              class="material-icons">chat</i> Twitter</a>
+          <a href="https://www.facebook.com/yourfacebookprofile" target="_blank" class="btn btn-custom"
+            aria-label="Facebook"><i class="material-icons">thumb_up</i> Facebook</a>
+        </div>
+        <div class="section-content">
+          <p>Follow me for the latest updates in cloud technologies, industry insights, and project news.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="card">
+        <div class="section-image">
+          <img src="https://via.placeholder.com/800x200?text=Contact" alt="Contact" loading="lazy">
+        </div>
+        <h4 id="contact-heading">Contact</h4>
+        <p>Get in touch for collaborations, projects, or career opportunities:</p>
+        <p>Email: <a href="mailto:prajwalkoirala638@gmail.com" class="btn btn-custom" aria-label="Send Email">Send
+            Email</a></p>
+        <p>Phone: <a href="tel:+1234567890" class="btn btn-custom" aria-label="Call Phone Number">Call: +1 (234)
+            567-890</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal634" target="_blank" class="btn btn-custom"
+            aria-label="LinkedIn Profile">Visit Profile</a></p>
+        <p>GitHub: <a href="https://github.com/complexorganizations" target="_blank" class="btn btn-custom"
+            aria-label="View GitHub Projects">View Projects</a></p>
+        <div class="section-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Prajwal Koirala</h5>
+          <p class="grey-text text-lighten-4">Building secure and scalable cloud solutions for the modern era.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Materialize JS and Initialization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Sidenav (Navigation Drawer)
+      var sidenavElems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenavElems, { edge: 'left' });
+
+      // Initialize Collapsible Sections
+      var collapsibleElems = document.querySelectorAll('.collapsible');
+      M.Collapsible.init(collapsibleElems, { accordion: false });
+    });
+  </script>
 </body>
+
 </html>
