@@ -50,7 +50,7 @@ Leveraged AWS Lambda, Azure Functions, and Kafka to create a scalable, serverles
 User Engagement Improvement
 Implemented A/B testing frameworks and automated event tracking using tools like Google Analytics and Mixpanel to optimize user interactions.
 Analyzed user behavior to continuously improve platform features and enhance engagement.
-Global Supply Chain Monitorin
+Global Supply Chain Monitoring
 Developed an automated reporting system with AWS IoT Core, Lambda, and S3 to monitor 200+ locations, improving stock accuracy.
 Integrated IoT devices and cloud services to process and report real-time tracking data.
 Demand Forecasting with Azure M
