@@ -144,6 +144,69 @@ Used Redis caching to improve response times and PostgreSQL’s EXPLAIN ANALYZE 
 
 ---
 
+Lead Software Engineer, Python
+Capital One
+Feb 2022 - June 2024
+
+Fraud Prevention Through Transaction Monitoring
+Outcome: Reduced fraudulent activity by 12%, preventing over $850K in losses annually.
+Key Actions: Designed and deployed a fraud monitoring system that analyzed transaction patterns in real-time. Collaborated with risk analysts to fine-tune detection thresholds and improve response times.
+Value Added: Enhanced security and customer trust by reducing false positives by 10%, ensuring legitimate transactions were processed smoothly.
+Engineering: Built an event-driven fraud detection system using Python, Kafka, and FastAPI. Integrated real-time data pipelines with AWS Lambda for quick decision-making and used PostgreSQL to store flagged transactions for further analysis.
+
+Optimized Financial Data Processing
+Outcome: Processed 75,000+ transactions per second with a 10% reduction in processing latency.
+Key Actions: Led the transition to a hybrid-cloud architecture, leveraging AWS for real-time analytics and on-prem infrastructure for cost efficiency. Implemented monitoring dashboards to track data pipeline health.
+Value Added: Improved system reliability and reduced costs by 8% by balancing cloud and on-prem workloads while maintaining 99.98% uptime.
+Engineering: Designed a serverless processing pipeline using AWS Step Functions, S3, and DynamoDB. Implemented data partitioning strategies to improve query performance and reduce bottlenecks.
+
+User Experience Enhancements for Mobile Banking
+Outcome: Increased mobile app engagement by 9%, reaching 1.2M daily active users.
+Key Actions: Introduced personalized transaction insights and streamlined the login experience by optimizing multi-factor authentication. Conducted A/B testing to refine new features.
+Value Added: Improved customer satisfaction by reducing login failures by 15% and increasing feature adoption among users.
+Engineering: Developed event-driven feature toggles using LaunchDarkly and integrated real-time analytics with Google Analytics and Snowflake to measure user behavior trends.
+
+Enterprise-Wide Compliance Automation
+Outcome: Reduced regulatory compliance audit times by 25%.
+Key Actions: Developed automated reporting tools for internal audits, ensuring continuous compliance with GDPR, CCPA, and PCI DSS. Implemented role-based access controls for sensitive data.
+Value Added: Strengthened security posture, minimizing compliance risks and avoiding potential penalties exceeding $1M.
+Engineering: Created a secure logging system using Python, AWS CloudTrail, and Elasticsearch to automate anomaly detection and compliance monitoring.
+
+AI-Powered Credit Risk Analysis
+Outcome: Reduced loan default rates by 6%, increasing approval efficiency by 20%.
+Key Actions: Developed a machine learning model to assess credit risk, incorporating real-time transaction history and behavioral analysis. Automated the approval workflow to expedite processing.
+Value Added: Enabled faster, data-driven lending decisions while maintaining rigorous risk management standards.
+Engineering: Built a credit scoring model using scikit-learn and XGBoost, deployed via AWS SageMaker. Integrated an ETL pipeline with AWS Glue and Redshift to update risk models dynamically.
+
+Encryption & Data Security Enhancements
+Outcome: Secured over 98% of customer financial data, reducing data breach risks.
+Key Actions: Implemented end-to-end encryption protocols across data storage and transmission layers. Automated security key rotation to minimize exposure risks.
+Value Added: Strengthened Capital One’s reputation as a secure financial institution by ensuring compliance with industry-leading security standards.
+Engineering: Deployed AES-256 encryption with AWS KMS and Azure Key Vault for secure key management. Automated security incident detection using AWS Security Hub and GuardDuty.
+
+===
+Fraud Detection System Optimization
+Designed and deployed a fraud monitoring system using Python, Kafka, and FastAPI to analyze transaction patterns in real time. Integrated AWS Lambda for rapid decision-making and PostgreSQL for secure data storage.
+Enhanced fraud detection accuracy by refining detection thresholds, reducing false positives by 10%, and preventing over $850K in losses annually.
+High-Performance Financial Data Processing
+Led the implementation of a hybrid-cloud architecture utilizing AWS for real-time analytics and on-prem infrastructure for cost efficiency. Designed a serverless data pipeline using AWS Step Functions, S3, and DynamoDB.
+Optimized system performance, processing 75,000+ transactions per second while reducing processing latency by 10%.
+Mobile Banking User Experience Improvements
+Developed personalized transaction insights and optimized multi-factor authentication to enhance login efficiency. Used LaunchDarkly for event-driven feature toggles and integrated real-time analytics with Google Analytics and Snowflake.
+Increased mobile app engagement by 9%, reaching 1.2M daily active users and reducing login failures by 15%.
+Regulatory Compliance Automation
+Implemented automated reporting tools to ensure continuous compliance with GDPR, CCPA, and PCI DSS. Created a secure logging system using Python, AWS CloudTrail, and Elasticsearch for compliance monitoring.
+Reduced regulatory audit times by 25%, mitigating compliance risks and avoiding penalties exceeding $1M.
+AI-Powered Credit Risk Modeling
+Developed a machine learning model using scikit-learn and XGBoost, deployed via AWS SageMaker, to assess credit risk based on real-time transaction history. Built an ETL pipeline with AWS Glue and Redshift for dynamic model updates.
+Reduced loan default rates by 6% and improved approval efficiency by 20% through automated risk analysis.
+Data Security & Encryption Enhancements
+Implemented AES-256 encryption using AWS KMS and Azure Key Vault to protect sensitive customer data. Automated security key rotation and integrated AWS Security Hub and GuardDuty for proactive threat detection.
+Secured over 98% of customer financial data, significantly reducing data breach risks and ensuring compliance with industry security standards.
+===
+
+---
+
 Lead Cloud Engineer
 Cloud Native Computing Foundation (CNCF)
 Nov 2020 - Mar 2023
